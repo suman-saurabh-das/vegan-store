@@ -1,0 +1,712 @@
+/* GLOBAL STYLING AND FUNCTIONS */
+
+html,body{
+    margin: 0;
+    overflow-x: hidden;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.15)
+    }
+}
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background: rgb(170, 210, 54);
+}
+::-webkit-scrollbar-thumb{
+    background: #71b616;
+}
+
+/* ---------- BEGINING OF SECTION 1 (Topbar + Landing Section) ---------- */
+
+/* ----- Topbar Styles ----- */
+#topbar-logo{
+    width: 40px;
+}
+.topbar-menu-items{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;    font-weight: 600;
+    margin-right: 24px;
+}
+.topbar-menu-items:hover{
+    cursor: pointer;
+}
+#topbar-buy-now-btn{
+    background-color: rgb(170, 210, 54);
+    border: none;   border-radius: 4px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;    font-weight: 600;
+    margin-right: 16px;
+    padding: 7px 34px;
+}
+#topbar-buy-now-btn:hover{
+    background-color: white;
+    border: 1px solid rgb(170, 210, 54);
+    cursor: pointer;
+    color: rgb(170, 210, 54);
+}
+
+/* ----- Topbar Layout ----- */
+#topbar{
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+    height: 77px;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: fixed; top: 0;
+    width: 100%;
+    z-index: 8;
+}
+
+/* ----- Topbar Dropdown-Menu ----- */
+#topbar-dropdown-menu{
+    background-color: white;
+    border-top: 2px solid rgb(170, 210, 54);
+    box-shadow: 0 2px 5px #ccc;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    line-height: 2;
+    padding: 20px;
+    position: absolute; top: 50px;
+    width: 150px;
+    z-index: 10;
+}
+#topbar-dropdown-menu div:nth-of-type(1){
+    border-bottom: 1px solid #ccc;
+}
+#topbar-dropdown-menu div:nth-of-type(2){
+    border-bottom: 1px solid #ccc;
+}
+
+/* ----- Topbar Dropdown-Menu Show----- */
+#topbar-dropdown-menu-wrapper:hover
+    #topbar-dropdown-menu{
+        display: block;
+        cursor: pointer;
+    }
+    
+
+/* ----- Landing Section Styles ----- */
+#landing-section{
+    background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png');
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20%;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+#landing-section-heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: 8.8px;
+    line-height: 1.2;
+}
+#landing-section-description{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 20px 20px 0 20px;
+}
+
+/* ---------- MOBILE RESPONSIVE SECTION 1 (Topbar + Landing Section) ---------- */
+@media screen and (max-width:768px) {
+    .topbar-menu-items{
+        display: none;
+    }
+
+    #landing-section{
+        padding: 0;
+    }
+
+    #landing-section-heading{
+        font-size: 28px;
+    }
+    #topbar-buy-now-btn{
+        margin-right: 0;
+    }
+}
+/* ---------- ENDING OF SECTION 1 (Topbar + Landing Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 2 (Step Section) ---------- */
+
+/* ----- Step Section Styles ----- */
+.step-section-items{
+    color: white;
+    padding: 112px 48px;
+    text-align: center;
+}
+.step-section-items i{
+    font-size: 96px;
+}
+.step-section-items h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.step-section-items p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+}
+
+/* ----- Step Section Area and Animation ----- */
+#step-1{
+    background-color: #5acda6;
+    grid-area: step-1;
+}
+#step-1:hover
+    #step-icon-1{
+        animation: zoom 0.5s forwards;
+}
+#step-2{
+    background-color: #91ac41;
+    grid-area: step-2;
+}
+#step-2:hover
+    #step-icon-2{
+        animation: zoom 0.5s forwards;
+}
+#step-3{
+    background-color: #e4b476;
+    grid-area: step-3;
+}
+#step-3:hover
+    #step-icon-3{
+        animation: zoom 0.5s forwards;
+}
+#step-4{
+    background-color: #f69dad;
+    grid-area: step-4;
+}
+#step-4:hover
+    #step-icon-4{
+        animation: zoom 0.5s forwards;
+}
+
+/* ----- Step Section Layout ----- */
+#step-section{
+    display: grid;
+    grid-template-areas: 
+    'step-1 step-2 step-3 step-4';
+}
+
+/* ---------- MOBILE RESPONSIVE SECTION 2 (Step Section) ---------- */
+@media screen and (max-width:768px) {
+    #step-section{
+        grid-template-areas: 
+        'step-1 step-1 step-1 step-1'
+        'step-2 step-2 step-2 step-2'
+        'step-3 step-3 step-3 step-3'
+        'step-4 step-4 step-4 step-4';
+    }
+}
+/* ---------- ENDING OF SECTION 2 (Step Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 3 (Store Section) ---------- */
+
+/* ----- Store Section Styles ----- */
+.heading-1{
+    color: #91ac41;
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0; margin-top: 35px;
+}
+.heading-2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    margin: 0 0 8px 0;
+}
+.heading-3{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0 0 55px 0;
+}
+
+.store-icons{
+    background-color: #e3b375;
+    color: white;
+    font-size: 60px;
+    padding: 40px;
+    border-radius: 50%;
+}
+.store-section-items{
+    padding: 24px;
+}
+.store-section-items h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.store-section-items p{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ----- Store Section Area and Animation ----- */
+#store-1{
+    grid-area: store-1;
+}
+#store-1:hover
+    #store-icon-1{
+        animation: zoom 0.5s forwards;
+}
+#store-2{
+    grid-area: store-2;
+}
+#store-2:hover
+    #store-icon-2{
+        animation: zoom 0.5s forwards;
+}
+#store-3{
+    grid-area: store-3;
+}
+#store-3:hover
+    #store-icon-3{
+        animation: zoom 0.5s forwards;
+}
+#store-4{
+    grid-area: store-4;
+}
+#store-4:hover
+    #store-icon-4{
+        animation: zoom 0.5s forwards;
+}
+
+/* ----- Store Section Layout ----- */
+#store-section-wrapper{
+    display: grid;
+    grid-template-areas:
+    'store-1 store-2 store-3 store-4';
+    margin: auto;
+    width: 100%; max-width: 1140px;
+}
+#store-section{
+    background-color: #f7eee2;
+    padding: 75px 0;
+    text-align: center;
+}
+/* ---------- MOBILE RESPONSIVE SECTION 3 (Store Section) ---------- */
+@media screen and (max-width:768px) {
+    .heading-2{
+        font-size: 28px;
+    }
+    #store-section-wrapper{
+        grid-template-areas:
+        'store-1 store-1 store-1 store-1'
+        'store-2 store-2 store-2 store-2'
+        'store-3 store-3 store-3 store-3'
+        'store-4 store-4 store-4 store-4';
+    }
+    #store-section{
+        padding: 20px;
+    }
+}
+/* ---------- ENDING OF SECTION 3 (Store Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 4 (Shop Section) ---------- */
+
+/* ----- Shop Section Styles ----- */
+#shop-section{
+    text-align: center;
+    padding: 75px 0;
+}
+
+/* Shop Section Heading styles are taken from SECTION 3 (Store Section) */
+#shop-section-headings h1:nth-of-type(3){
+    margin: 0 222.8px 55px 222.8px;
+}
+.shop-icons{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+.shop-section-card{
+    background-color: #f5f6fb;
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    margin: 16px;
+}
+.shop-section-card p:first-of-type{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+.shop-section-card h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.shop-section-card p:last-of-type{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* ----- Shop Section Area and Animation ----- */
+#shop-section-headings{
+    grid-area: shop-headings;
+}
+#shop-1{
+    grid-area: shop-1;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+}
+#shop-1:hover{
+    box-shadow: 0 5px 20px rgb(241, 241, 241);
+}
+#shop-2{
+    grid-area: shop-2;
+    transition: box-shadow 250ms ease-in;
+}
+#shop-2:hover{
+    box-shadow: 0 5px 20px rgb(241, 241, 241);
+}
+#shop-3{
+    grid-area: shop-3;
+    transition: box-shadow 250ms ease-in;
+}
+#shop-3:hover{
+    box-shadow: 0 5px 20px rgb(241, 241, 241);
+}
+/* ----- Shop Section Layout ----- */
+#shop-section{
+    display: grid;
+    grid-template-areas: 
+    'shop-headings shop-headings shop-headings'
+    'shop-1 shop-2 shop-3';
+    margin: auto;
+    width: 100%; max-width: 1140px;
+}
+
+/* ---------- MOBILE RESPONSIVE SECTION 4 (Shop Section) ---------- */
+@media screen and (max-width:768px) {
+    #shop-section-headings h1:nth-of-type(3){
+        margin: 0;
+    }
+    /* #shop-section-headings h1:nth-of-type(2){
+        font-size: 28px;
+        This style is taken from SECTION 3
+    } */
+    #shop-section{
+        display: grid;
+        padding: 0;
+        grid-template-areas: 
+        'shop-headings shop-headings shop-headings'
+        'shop-1 shop-1 shop-1'
+        'shop-2 shop-2 shop-2'
+        'shop-3 shop-3 shop-3';
+    }
+}
+/* ---------- ENDING OF SECTION 4 (Shop Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 5 (Follow-us Section) ---------- */
+
+/* ----- Follow-Us Section Styles ----- */
+#follow-us-1-img{
+    width: 100%;
+}
+#follow-us-2 h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    margin: 0 0 8px 0;
+}
+#follow-us-2 p{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+#follow-us-2 input{
+    border: 0; border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 40px;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+}
+#follow-us-2 button{
+    border: 0; border-radius: 4px;
+    background-color: #f69dad;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 16px 42px;
+    text-transform: uppercase;
+}
+#follow-us-2 button:hover{
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #f69dad; border-radius: 4px;
+    color: #f69dad;
+    cursor: pointer;
+}
+
+/* ----- Follow-Us Section Area ----- */
+#follow-us-1{
+    grid-area: follow-us-1;
+}
+#follow-us-2{
+    background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/strawberry-white.png');
+    background-size: cover;
+    padding: 100px;
+    grid-area: follow-us-2;
+}
+
+/* ----- Follow-Us Section Layout ----- */
+#follow-us-section{
+    display: grid;
+    grid-template-columns: 67% 33%;
+    grid-template-areas: 'follow-us-1 follow-us-2';
+}
+
+/* ---------- MOBILE RESPONSIVE SECTION 5 (Follow-us Section) ---------- */
+@media screen and (max-width: 768px){
+    #follow-us-section{
+        grid-template-areas: 
+        'follow-us-1 follow-us-1'
+        'follow-us-2 follow-us-2';
+    }
+    #follow-us-2{
+        padding: 16px;
+    }
+}
+/* ---------- ENDING OF SECTION 5 (Follow-us Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 6 (Stats Section) ---------- */
+
+/* ----- Stats Section Styles ----- */
+.stats-heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+}
+.stats-content{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #57e3b5;
+}
+
+/* ----- Stats Section Area ----- */
+#stat-1{
+    grid-area: stat-1;
+}
+#stat-2{
+    grid-area: stat-2;
+}
+#stat-3{
+    grid-area: stat-3;
+}
+#stat-4{
+    grid-area: stat-4;
+}
+
+/* ----- Stats Section Layout ----- */
+#stat-section-wrapper{
+    display: grid;
+    grid-template-areas: 
+    'stat-1 stat-2 stat-3 stat-4';
+    margin: auto;
+    width: 100%; max-width: 1140px;
+}
+#stats-section{
+    background-color: #f6fcfa;
+    padding: 50px 50px;
+    text-align: center;
+}
+
+/* ---------- MOBILE RESPONSIVE SECTION 6 (Stats Section) ---------- */
+@media screen and (max-width: 768px){
+    .stats-heading{
+        margin: 0;
+    }
+    #stat-section-wrapper{
+        grid-template-areas: 
+        'stat-1 stat-1 stat-1 stat-1'
+        'stat-2 stat-2 stat-2 stat-2'
+        'stat-3 stat-3 stat-3 stat-3'
+        'stat-4 stat-4 stat-4 stat-4';
+    }
+    #stats-section{
+        padding: 20px 0;
+    }
+}
+/* ---------- ENDING OF SECTION 6 (Stats Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 7 (Video Section) ---------- */
+
+/* ----- Video Section Styles ----- */
+#video-section h1{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 400;
+    text-align: center;
+}
+#video-section hr{
+    background-color: #e4b476;
+    border: 0;
+    height: 1px;
+    margin-bottom: 0;
+    width: 96px;
+}
+
+/* ----- Video Section Layout ----- */
+#video-section{
+    display: grid;
+    justify-content: center;
+}
+/* ---------- MOBILE RESPONSIVE SECTION 7 (Video Section) ---------- */
+@media screen and (max-width: 768px) {
+    #video-section h1{
+        font-size: 28px;
+    }
+    #video-section iframe{
+        width: 90vw;
+        height: 40vh;
+    }
+}
+/* ---------- ENDING OF SECTION 7 (Video Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 8 (Address Section) ---------- */
+
+/* ----- Address Section Styles ----- */
+.green-cursive-heading{
+    color: #91ac41;
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0; margin-top: 35px;
+}
+.black-bold-heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    margin: 0;
+}
+.black-normal-heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 32px;
+}
+.paragraph-content{
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.input-elements{
+    border: 0.5px solid #e5e6ec; border-radius: 4px;
+    box-sizing: border-box;
+    color: #8b8b99;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px 0;
+    outline: none;
+    padding: 16px;
+    width: 100%;
+}
+#form-submit-btn{
+    background-color: rgb(170, 210, 54);
+    border: 0; border-radius: 4px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 9px 34px;
+    text-transform: uppercase;
+}
+#form-submit-btn:hover{
+    cursor: pointer;
+}
+
+/* ----- Address Section Area ----- */
+#address-section-1{
+    grid-area: address-section-1;
+    box-sizing: border-box;
+}
+#address-section-2{
+    grid-area: address-section-2;
+    box-sizing: border-box;
+}
+/* ----- Address Section Layout ----- */
+#address-section{
+    display: grid;
+    box-sizing: border-box;
+    justify-content: space-between;
+    grid-column-gap: 10%;
+    grid-template-areas: 
+    'address-section-1 address-section-2';
+    margin: auto;
+    padding: 100px 0;
+    width: 100%; max-width: 1140px;
+}
+
+/* ---------- MOBILE RESPONSIVE SECTION 8 (Address Section) ---------- */
+@media screen and (max-width: 768px) {
+    #address-section{
+        grid-template-areas: 
+    'address-section-1 address-section-1'
+    'address-section-2 address-section-2';
+    margin: 0;
+    padding: 16px;
+    }
+}
+/* ---------- ENDING OF SECTION 8 (Address Section) ---------- */
+
+/* ---------- BEGINING OF SECTION 9 (Footer) ---------- */
+
+/* ----- Footer Section Styles ----- */
+#footer p{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* ----- Footer Section Layout ----- */
+#footer{
+    background-color: #232323;
+    padding: 30px 0;
+    text-align: center;
+}
+/* ---------- ENDING OF SECTION 9 (Footer) ---------- */
